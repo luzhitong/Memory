@@ -4,36 +4,50 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    private ListView listView;
+    List<String> data ;
+    private TimelineAdapter timelineAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_listview);
+
+        listView = (ListView) this.findViewById(R.id.listview);
+        listView.setDividerHeight(0);
+        timelineAdapter = new TimelineAdapter(this, getData());
+        listView.setAdapter(timelineAdapter);
+
     }
 
+    private List<Map<String, Object>> getData() {
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("title", "title");
+        list.add(map);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        map = new HashMap<String, Object>();
+        map.put("title", "title");
+        list.add(map);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        map = new HashMap<String, Object>();
+        map.put("title", "title");
+        list.add(map);
 
-        return super.onOptionsItemSelected(item);
+        map = new HashMap<String, Object>();
+        map.put("title", "title");
+        list.add(map);
+        return list;
     }
 }

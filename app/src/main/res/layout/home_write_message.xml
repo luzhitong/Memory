@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wb_bg_titlebar" >
+
+        <!--Button
+            android:id="@+id/home_write_send_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/home_write_btn_bg"
+            android:text="发送" /-->
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Memory"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <!--Button
+            android:id="@+id/home_write_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/home_write_btn_bg"
+            android:text="返回" /-->
+    </RelativeLayout>
+
+    <!--LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1000"
+        android:orientation="vertical"
+        android:padding="5dip" -->
+
+        <EditText
+            android:id="@+id/home_write_head"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="主题"
+            android:inputType="textShortMessage"
+            android:padding="8dip"
+            android:singleLine="true"
+            android:textColorHighlight="#cccccc"
+            android:textSize="20sp"/>
+
+
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="20"
+            android:background="@null"
+            android:padding="5dip"
+            android:layout_margin="5dip">
+
+            <EditText
+                android:id="@+id/home_write_weibo_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="说点儿什么吧..."
+                android:inputType="textShortMessage"
+                android:paddingTop="5dip"
+                android:singleLine="false"
+                android:textColor="@null"
+                android:textColorHighlight="#cccccc"
+                android:textSize="18sp" >
+
+            </EditText>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true" >
+
+                <ImageView
+                    android:id="@+id/write_imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/wb_item_lbs" />
+
+                <TextView
+                    android:id="@+id/home_write_geo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/write_imageView1"
+                    android:gravity="center"
+                    android:text="深圳"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#63B8FF"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/home_write_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:text="2014-10-1 "
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#63B8FF"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    <!--/LinearLayout-->
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textbanner_bg"
+        android:paddingTop="10dip"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/home_write_pic_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/home_write_pic_bg" />
+            </RelativeLayout>
+
+            <!--RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/home_write_at_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/home_write_at_bg" />
+            </RelativeLayout-->
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/home_write_topic_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/home_write_geo_bg" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/home_write_face_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/home_write_topic_bg" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/home_write_geo_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/home_write_face_bg" />
+            </RelativeLayout>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

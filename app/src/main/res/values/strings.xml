@@ -13,5 +13,11 @@
     <string name="login_username_hint">Email或手机号</string>
     <string name="login_register_link">没有帐号？ <a href="#">注册</a></string>
     <string name="login_login_link">已有帐号？ <a href="#">登录</a></string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
 
 </resources>

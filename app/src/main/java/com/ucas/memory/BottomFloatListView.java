@@ -1,6 +1,7 @@
 package com.ucas.memory;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -102,6 +103,9 @@ public class BottomFloatListView extends ListView implements OnScrollListener {
     }
 
 
+
+
+
     private void action_down(float y){
         mMotionY = y;
         bIsDown = true;
@@ -122,9 +126,7 @@ public class BottomFloatListView extends ListView implements OnScrollListener {
 
     }
 
-    /**
-     * ��ʾ�ײ�������
-     */
+
     public void showBottomBar() {
 
         if (mBottomBar != null && mBottomBar.getVisibility() == View.GONE) {
@@ -197,6 +199,7 @@ public class BottomFloatListView extends ListView implements OnScrollListener {
     public void setBottomBar(ViewGroup bottomBar) {
         this.mBottomBar = bottomBar;
     }
+
 
 }
 

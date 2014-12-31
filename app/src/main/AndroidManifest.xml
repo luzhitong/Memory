@@ -4,11 +4,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/cat"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".AppStart"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".AddMemoryActivity"></activity>
+        <activity android:name=".ShowMemoryInfoActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
     </application>
     <uses-sdk android:minSdkVersion="8" />
 </manifest>

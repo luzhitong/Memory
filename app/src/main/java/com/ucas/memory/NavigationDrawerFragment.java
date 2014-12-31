@@ -1,5 +1,6 @@
 package com.ucas.memory;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -247,12 +248,19 @@ public class NavigationDrawerFragment extends Fragment {
             return true;
         }
 
-        if (item.getItemId() == R.id.action_example) {
-            Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_add:
+                Intent i=new Intent();
+                i.setClassName("com.ucas.memory","AddMemoryActivity");
+                startActivity(i);
+                return true;
+            case R.id.action_search:
+                return true;
+            case R.id.action_settings:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 
     /**

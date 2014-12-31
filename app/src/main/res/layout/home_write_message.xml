@@ -2,22 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/wb_bg_titlebar" >
+        android:background="@drawable/wb_bg_titlebar">
 
-        <!--Button
-            android:id="@+id/home_write_send_btn"
+
+
+        <Button
+            android:id="@+id/home_detail_back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="5dip"
+            android:layout_marginLeft="5dip"
             android:background="@drawable/home_write_btn_bg"
-            android:text="发送" /-->
+            android:text="返回" />
 
         <TextView
             android:id="@+id/textView1"
@@ -28,181 +31,162 @@
             android:textColor="@color/white"
             android:textSize="20sp" />
 
-        <!--Button
-            android:id="@+id/home_write_back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="5dip"
-            android:background="@drawable/home_write_btn_bg"
-            android:text="返回" /-->
+
     </RelativeLayout>
 
-    <!--LinearLayout
-        android:layout_width="match_parent"
+
+    <LinearLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1000"
+        android:layout_margin="5dip"
+        android:background="@null"
         android:orientation="vertical"
-        android:padding="5dip" -->
+        android:padding="5dip">
 
         <EditText
             android:id="@+id/home_write_head"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dip"
             android:background="@null"
-            android:gravity="center"
-            android:hint="主题"
+            android:hint="这是关于..."
             android:inputType="textShortMessage"
-            android:padding="8dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
             android:singleLine="true"
             android:textColorHighlight="#cccccc"
-            android:textSize="20sp"/>
+            android:textSize="19sp" />
 
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5px"
+            android:paddingLeft="25px"
+            android:paddingRight="25px">
 
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#ADADAD" />
+        </LinearLayout>
 
-        <RelativeLayout
-            android:id="@+id/RelativeLayout1"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:layout_weight="20"
+        <EditText
+            android:id="@+id/home_write_weibo_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
             android:background="@null"
-            android:padding="5dip"
-            android:layout_margin="5dip">
+            android:hint="说点儿什么吧..."
+            android:inputType="textShortMessage"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:singleLine="false"
+            android:textColorHighlight="#cccccc"
+            android:textSize="18sp">
 
-            <EditText
-                android:id="@+id/home_write_weibo_edit"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:background="@null"
-                android:gravity="top"
-                android:hint="说点儿什么吧..."
-                android:inputType="textShortMessage"
-                android:paddingTop="5dip"
-                android:singleLine="false"
-                android:textColor="@null"
-                android:textColorHighlight="#cccccc"
-                android:textSize="18sp" >
-
-            </EditText>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true" >
-
-                <ImageView
-                    android:id="@+id/write_imageView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:src="@drawable/wb_item_lbs" />
-
-                <TextView
-                    android:id="@+id/home_write_geo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/write_imageView1"
-                    android:gravity="center"
-                    android:text="深圳"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="#63B8FF"
-                    android:textSize="15sp" />
+        </EditText>
 
 
-            </RelativeLayout>
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/home_write_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:gravity="center"
-                android:text="2014-10-1 "
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#63B8FF"
-                android:textSize="15sp" />
-        </RelativeLayout>
-    <!--/LinearLayout-->
-
-    <TableLayout
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/textbanner_bg"
-        android:paddingTop="10dip"
-        android:stretchColumns="*" >
+        android:layout_margin="20px"
+        android:paddingLeft="10px"
+        android:paddingRight="10px">
 
-        <TableRow
-            android:id="@+id/tableRow1"
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#ADADAD" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:background="@null"
+        android:orientation="vertical"
+        android:padding="5dip">
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:gravity="center_vertical">
 
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+            <ImageButton
+                android:layout_height="60px"
+                android:layout_width="60px"
+                android:src="@drawable/wb_icon_write_lbs_nor"
+                android:background="@null"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-                <Button
-                    android:id="@+id/home_write_pic_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/home_write_pic_bg" />
-            </RelativeLayout>
+                android:text="和他/她们一起..."/>
 
-            <!--RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20px"
+            android:layout_marginBottom="20px"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical">
+            <ImageView android:src="@drawable/wb_icon_dandelion"
+                android:layout_height="200px"
+                android:layout_width="200px"/>
 
-                <Button
-                    android:id="@+id/home_write_at_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/home_write_at_bg" />
-            </RelativeLayout-->
 
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
 
-                <Button
-                    android:id="@+id/home_write_topic_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/home_write_geo_bg" />
-            </RelativeLayout>
+        </LinearLayout>
 
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical">
 
-                <Button
-                    android:id="@+id/home_write_face_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/home_write_topic_bg" />
-            </RelativeLayout>
+            <ImageButton
+                android:layout_height="60px"
+                android:layout_width="60px"
+                android:src="@drawable/wb_icon_write_lbs_nor"
+                android:background="@null"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
+                android:text="在这个时候..."/>
 
-                <Button
-                    android:id="@+id/home_write_geo_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:background="@drawable/home_write_face_bg" />
-            </RelativeLayout>
-        </TableRow>
-    </TableLayout>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:layout_height="60px"
+                android:layout_width="60px"
+                android:src="@drawable/wb_icon_write_lbs_nor"
+                android:background="@null"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="在这个地点..."/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

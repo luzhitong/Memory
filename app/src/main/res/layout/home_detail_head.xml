@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/wb_bg_titlebar">
+        android:background="@drawable/wb_bg_blackbar">
 
         <TextView
             android:id="@+id/textView1"
@@ -41,14 +41,14 @@
         <ImageSwitcher
             android:id="@+id/switcher"
             android:layout_width="fill_parent"
-            android:layout_height="200dp"
+            android:layout_height="100dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true" />
 
         <Gallery
             android:id="@+id/gallery"
             android:layout_width="fill_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="#55000000"
             android:spacing="16dp"
             android:layout_below="@+id/switcher"
@@ -63,7 +63,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@null"
-        android:hint="说点儿什么吧..."
+        android:hint="今天很开心，但爬长城也很辛苦"
         android:inputType="textShortMessage"
         android:padding="10dip"
         android:singleLine="false"
@@ -132,7 +132,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/write_imageView1"
-            android:text="和朋友们..."
+            android:text="和小明..."
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="#63B8FF"
             android:textSize="15sp" />

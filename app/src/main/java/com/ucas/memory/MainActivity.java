@@ -1,6 +1,9 @@
 package com.ucas.memory;
 
 import android.app.Activity;
+import android.app.SearchManager;
+import android.app.SearchableInfo;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.support.v7.widget.SearchView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,24 +36,18 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 
     private NavigationDrawerFragment mNavigationDrawerFragment;
-    private CharSequence mTitle;
+ //   private CharSequence mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_listview);
         setContentView(R.layout.activity_main);
 
 
-
         timelineAdapter = new TimelineAdapter(this, getData());
-        /*
-        listView = (ListView)findViewById(R.id.listView);
-        listView.setAdapter(timelineAdapter);
-        listView.setDividerHeight(0);*/
 
         mBottomFloatListView = (BottomFloatListView)findViewById(R.id.listView)  ;
-        //mBottomFloatListView.setDividerHeight(0);
+        mBottomFloatListView.setDividerHeight(0);
         mBottomFloatListView.setAdapter(timelineAdapter);
         ViewGroup bottomView = (ViewGroup)findViewById(R.id.bottombar) ;
         mBottomFloatListView.setBottomBar(bottomView);
@@ -56,7 +55,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                                     long arg3) {
-                System.out.println("===================================================================");
                 Intent i = new Intent();
                 i.setClass(MainActivity.this, ShowMemoryInfoActivity.class);
                 startActivity(i);
@@ -66,7 +64,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        //mTitle = getTitle();
 
 
 
@@ -74,6 +72,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+       this.getSupportActionBar().setBackgroundDrawable(this.getResources().getDrawable(R.drawable.wb_bg_titlebar));
 
 
 
@@ -111,7 +111,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     }
 
     public void onSectionAttached(int number) {
-        switch (number) {
+      /*  switch (number) {
             case 1:
                 mTitle = "Memory";
                 break;
@@ -121,14 +121,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
             case 3:
                 mTitle = "Memory";
                 break;
-        }
+        }*/
     }
 
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
+       // actionBar.setDisplayShowTitleEnabled(true);
+      //  actionBar.setTitle(mTitle);
     }
 
 
@@ -138,8 +138,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
+
             getMenuInflater().inflate(R.menu.main, menu);
-            restoreActionBar();
+           // restoreActionBar();
+
+
+
             return true;
         }
         return super.onCreateOptionsMenu(menu);
@@ -151,15 +155,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
         switch (item.getItemId()) {
             case R.id.action_add:
                 Intent i=new Intent();
                 i.setClass(MainActivity.this,AddMemoryActivity.class);
                 startActivity(i);
                 return true;
-            case R.id.action_search:
-                return true;
-            case R.id.action_settings:
+            case R.id.search:
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

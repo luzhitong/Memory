@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/show_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="2014.01.01"
+        android:textSize="9dp" />
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/show_time"
+        android:layout_marginTop="7dp">
+
+        <ImageView
+            android:id="@+id/IV_picture"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/bg_green_circle_smic" />
+
+        <LinearLayout
+            android:id="@+id/lly_title_and_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/IV_picture"
+            android:orientation="vertical"
+            android:paddingLeft="5dp">
+
+            <TextView
+                android:id="@+id/searched_data_item"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:maxEms="7"
+                android:singleLine="true"
+                android:text="今天去爬长城"
+                android:textColor="#4F4F4F"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/TV_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="今天天气真好，所以和小伙伴们决定去爬长城"
+                android:textColor="#5C5C5C"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/IV_picture"
+            android:layout_below="@id/lly_title_and_content"
+            android:layout_toRightOf="@id/IV_picture">
+
+            <ImageView
+                android:id="@+id/image_tag"
+                android:layout_width="15px"
+                android:layout_height="15px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="@null"
+                android:src="@drawable/wb_icon_write_lbs_nor" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@id/image_tag"
+                android:maxEms="7"
+                android:singleLine="true"
+                android:text="生活，运动"
+                android:textSize="9dp" />
+
+
+            <TextView
+                android:id="@+id/TV_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:maxEms="7"
+                android:singleLine="true"
+                android:text="北京"
+                android:textSize="9dp" />
+
+            <ImageView
+                android:layout_width="15px"
+                android:layout_height="15px"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@id/TV_position"
+                android:background="@null"
+                android:src="@drawable/wb_icon_write_lbs_nor" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

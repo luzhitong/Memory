@@ -20,6 +20,9 @@
         <activity android:name=".AddMemoryActivity"></activity>
         <activity android:name=".ShowMemoryInfoActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
+
+
+
     </application>
     <uses-sdk android:minSdkVersion="8" />
 </manifest>

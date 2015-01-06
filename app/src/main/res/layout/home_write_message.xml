@@ -8,19 +8,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/wb_bg_blackbar">
+        android:background="@drawable/wb_bg_titlebar">
 
 
 
-        <Button
-            android:id="@+id/home_detail_back_btn"
+        <ImageView android:id="@+id/home_detail_back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dip"
-            android:background="@drawable/home_write_btn_bg"
-            android:text="返回" />
+            android:src="@android:drawable/ic_menu_revert"/>
 
         <TextView
             android:id="@+id/textView1"
@@ -30,6 +28,14 @@
             android:text="Memory"
             android:textColor="@color/white"
             android:textSize="20sp" />
+
+        <ImageView android:id="@+id/home_detail_save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:src="@android:drawable/ic_menu_add"/>
 
 
     </RelativeLayout>

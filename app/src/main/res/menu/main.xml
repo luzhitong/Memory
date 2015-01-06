@@ -4,18 +4,17 @@
 
 
     <item
-        android:id="@+id/action_search"
-        android:icon="@android:drawable/ic_search_category_default"
+        android:id="@+id/search"
+        android:icon="@android:drawable/ic_menu_search"
         android:actionViewClass="android.widget.SearchView"
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="ifRoom"
         android:title="搜索" />
     <item
         android:id="@+id/action_add"
-        android:icon="@android:drawable/ic_menu_add"
+        android:icon="@android:drawable/ic_menu_edit"
         app:showAsAction="ifRoom"
         android:title="添加"/>
-    <item android:id="@+id/action_example" android:title="@string/action_example"
-        app:showAsAction="never" />
+
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>

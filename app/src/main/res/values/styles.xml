@@ -3,9 +3,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/myActionStyle</item>
     </style>
     <style name="normalText" parent="@android:style/TextAppearance">
         <item name="android:textColor">#444</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+        <style name="myActionStyle" parent="android:Theme.Holo.Light.DarkActionBar">
+            <item name="android:background">@drawable/wb_bg_titlebar</item>
+        </style>
 </resources>

@@ -18,7 +18,7 @@ public class AppStart extends Activity {
 		new Handler().postDelayed(new Runnable(){
 		@Override
 		public void run(){
-			Intent intent = new Intent(AppStart.this,MainActivity.class);
+			Intent intent = new Intent(AppStart.this,LoginActivity.class);
 			startActivity(intent);			
 			AppStart.this.finish();
 			overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);

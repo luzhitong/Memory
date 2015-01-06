@@ -17,14 +17,14 @@
         android:textSize="10sp" />
 
     <ImageView
-        android:layout_width="50px"
-        android:layout_height="30px"
+        android:layout_width="50sp"
+        android:layout_height="30sp"
         android:layout_weight="1"
         android:src="@drawable/ic_reg_camera" />
 
     <ImageView
-        android:layout_width="50px"
-        android:layout_height="30px"
+        android:layout_width="50sp"
+        android:layout_height="30sp"
         android:layout_weight="1"
         android:src="@drawable/ic_reg_album" />
 

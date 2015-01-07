@@ -11,8 +11,8 @@
     <string name="login_label_signup">注 册</string>
     <string name="login_status_logging_in">登录中...</string>
     <string name="login_username_hint">Email或手机号</string>
-    <string name="login_register_link">没有帐号？ <a href="#">注册</a></string>
-    <string name="login_login_link">已有帐号？ <a href="#">登录</a></string>
+    <string name="login_register_link">没有帐号？ </string>
+    <string name="login_login_link">已有帐号？</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>

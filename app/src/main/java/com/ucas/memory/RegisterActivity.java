@@ -1,11 +1,5 @@
 package com.ucas.memory;
 
-
-/**
- * Created by w on 2014/12/30.
- */
-
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,36 +13,44 @@ import org.json.JSONException;
 
 import java.io.IOException;
 
-public class LoginActivity extends Activity {
-
+/**
+ * Created by w on 2015/1/7.
+ */
+public class RegisterActivity extends Activity{
+    Button btn_register;
+    TextView tv_login;
     EditText userName;
     EditText password;
-    Button btn_signin;
-   TextView register;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
-
+        setContentView(R.layout.register);
+        btn_register=(Button)findViewById(R.id.signup_button11);
+        tv_login=(TextView)findViewById(R.id.login);
         userName=(EditText)findViewById(R.id.username_edit);
         password=(EditText)findViewById(R.id.password_edit);
-        btn_signin= (Button) findViewById(R.id.signin_button);
-        register=(TextView)findViewById(R.id.register);
-        btn_signin.setOnClickListener(new View.OnClickListener() {
+
+        tv_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent();
+                i.setClass(RegisterActivity.this,LoginActivity.class);
+                startActivity(i);
+            }
+        });
+/*        btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = userName.getText().toString();
                 String pwd = password.getText().toString();
                 try {
-                    if(DataUtility.login(ConnServer.login(email,pwd))){
+                    if(DataUtility.register(ConnServer.register(email, "", pwd))){
                         Intent i=new Intent();
-                        i.setClass(LoginActivity.this,MainActivity.class);
+                        i.setClass(RegisterActivity.this,MainActivity.class);
                         startActivity(i);
                     }
                     else{
-                        Toast.makeText(getApplicationContext(), "用户名或密码错误",
+                        Toast.makeText(getApplicationContext(),"注册失败，稍后再试" ,
                                 Toast.LENGTH_SHORT).show();
 
                     }
@@ -58,16 +60,7 @@ public class LoginActivity extends Activity {
                     e.printStackTrace();
                 }
             }
-        });
-   /*     register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent j=new Intent();
-                j.setClass(LoginActivity.this,RegisterActivity.class);
-                startActivity(j);
-            }
         });*/
-
 
     }
 }

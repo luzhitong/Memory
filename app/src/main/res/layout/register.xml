@@ -55,7 +55,7 @@
 
         <!-- 登录button -->
         <Button
-            android:id="@+id/signup_button"
+            android:id="@+id/signup_button11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/password_edit"
@@ -76,7 +76,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:textColor="#888"
-            android:textColorLink="#FF0066CC"
+            />
+        <TextView  android:id="@+id/login"
+            android:text="登录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/login_link"
+            android:textColor="#FF0066CC"
             />
         <ImageView android:id="@+id/miniTwitter_logo"
             android:src="@drawable/cat"

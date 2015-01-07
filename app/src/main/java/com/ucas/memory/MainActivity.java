@@ -3,22 +3,29 @@ package com.ucas.memory;
 import android.app.Activity;
 import android.app.SearchManager;
 import android.app.SearchableInfo;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.ShareActionProvider;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
-import android.support.v7.widget.SearchView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -75,9 +82,17 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
        this.getSupportActionBar().setBackgroundDrawable(this.getResources().getDrawable(R.drawable.wb_bg_titlebar));
 
+       // DataUtility.login(ConnServer.login(email, pwd));
+        //DataUtility.add_memory(ConnServer.add_memory("title", "location", "2014-12-12 12:12:12", "content", "people", "123"));
+       // DataUtility.get_momery_list(ConnServer.get_momery_list("", "2015-12-12 12:21:12", 0, 10));
+
 
 
     }
+
+
+
+
 
     private List<Map<String, Object>> getData() {
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
@@ -134,7 +149,34 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (!mNavigationDrawerFragment.isDrawerOpen()) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.main, menu);
+
+
+        menu.add( "Search" ).setIcon( getResources().getDrawable( R.drawable.wb_item_lbs ) ).setActionView( R.layout.search )
+                .setShowAsActionFlags( MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW );
+        SearchView searchView = new SearchView( getSupportActionBar().getThemedContext() );
+        searchView.setQueryHint( "Search for countries…" );
+        searchView.setOnQueryTextListener( new SearchView.OnQueryTextListener()
+        {
+
+            @Override
+            public boolean onQueryTextSubmit( String arg0 )
+            {
+                // TODO Auto-generated method stub
+                System.out.println(arg0+"    111111111111111111111a");
+                return true ;
+            }
+
+            @Override
+            public boolean onQueryTextChange( String arg0 )
+            {
+                // TODO Auto-generated method stub
+                System.out.println(arg0+"    111111111111111111111");
+                return true;
+            }
+        } );
+     /*   if (!mNavigationDrawerFragment.isDrawerOpen()) {
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
@@ -144,9 +186,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 
 
-            return true;
-        }
-        return super.onCreateOptionsMenu(menu);
+
+        }*/
+        return true;
     }
 
     @Override
@@ -154,7 +196,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
         switch (item.getItemId()) {
             case R.id.action_add:
@@ -163,7 +204,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                 startActivity(i);
                 return true;
             case R.id.search:
-                return true;
+                return super.onOptionsItemSelected(item);
             default:
                 return super.onOptionsItemSelected(item);
         }
